@@ -1,15 +1,14 @@
 //when importing node modules, install type definition file
 //npm install @types/node
 import { CsvFileReader } from './CsvFileReader';
+import { MatchResult } from './MatchResult';
 
 const reader = new CsvFileReader('football.csv');
 reader.read();
-//enumeration signals that these are closely related values
-enum MatchResult {
-  HomeWin = 'H',
-  AwayWin = 'A',
-  Draw = 'D',
-}
+
+console.log(reader.data);
+
+
 
 let manUnitedWins = 0;
 
