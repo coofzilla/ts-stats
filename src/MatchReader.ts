@@ -3,6 +3,7 @@ import { MatchResult } from './MatchResult';
 
 type MatchData = [Date, string, string, number, number, MatchResult, string];
 
+
 interface DataReader {
   read(): void;
   data: string[][];
@@ -10,9 +11,9 @@ interface DataReader {
 
 export class MatchReader {
   matches: MatchData[] = [];
-
+  //Composition reader
   constructor(public reader: DataReader) {}
-
+  //read method coming from CsvFileReader class
   load(): void {
     this.reader.read();
     this.matches = this.reader.data.map((row: string[]): MatchData => {
